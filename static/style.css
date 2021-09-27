@@ -1,0 +1,22 @@
+body{
+    background-color:rgb(212, 212, 212);
+    color: rgb(31, 31, 31);
+    margin: 0 auto;
+}
+
+.title{
+    color: black;
+    font-weight: bold;
+}
+
+div{
+    margin-top: 3ex;
+}
+
+h1{
+    color:rgb(255, 0, 0);
+}
+
+#submit{
+	margin-bottom:5vh;
+}

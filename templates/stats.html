@@ -1,0 +1,55 @@
+<style>
+    #bar_no{
+        background-color:darkcyan;
+        height: 3vh;
+        width: {{.Nlen}}vw;
+    }
+    #bar_yes{
+        background-color: crimson;
+        height: 3vh;
+        width: {{.Ylen}}vw;
+    }
+    body{
+        background-color:rgb(212, 212, 212);
+    }
+    #graph{
+        background-color: white;
+        width: 50%;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        padding-left: 3vh;
+    }
+    h3,h4{
+        font-weight: normal;
+    }
+    #label{
+        font-size: small;
+    }
+    
+</style>
+<h1>Stats</h1>
+collected from different users that used this website
+<h3>Unique User Count = <b>{{.Stat.UniqueUsers}}</b></h3>
+<h3>Total Prediction = <b>{{.Stat.TotalPred}}</b></h3>
+<br>
+<div id="graph">
+    <div class="label">
+        <span style="background-color: darkcyan;">
+            &nbsp;&nbsp;&nbsp;
+        </span>
+        &nbsp;predicted with no CHD <b>{{.Nper}}%</b>
+    </div>
+    <div class="label">
+        <span style="background-color: crimson;">
+            &nbsp;&nbsp;&nbsp;
+        </span>
+        &nbsp;predicted with CHD <b>{{.Yper}}%</b>
+    </div>
+    <br>
+    <div id="bar_no">&nbsp</div>
+    <div id="bar_yes">&nbsp</div>
+</div>
+
+<h4>Total Predicted with CHD = <b>{{.Stat.PredictedCHD}}</b></h4>
+<h4>Total Predicted with no CHD = <b>{{.Stat.PredictedNoCHD}}</b></h4>
+{{template "footer".}}

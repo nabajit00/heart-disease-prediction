@@ -1,0 +1,23 @@
+<head>
+<link rel="stylesheet" href="static/center.css">
+</head>
+<div id="main">
+  <h1 id="emoji">
+    {{if .Yes}}
+    :(
+    {{else}}
+    :)
+    {{end}}
+  </h1>
+  <h2>
+    {{if .Yes}}
+    Predicted that you have risk of coronary heart disease CHD
+    {{else}}
+    Predicted that you don't have risk of coronary heart disease CHD
+    {{end}}
+  <h2>
+  <h3>
+    Change of having CHD is {{.Per}}%
+  </h3>
+</div>
+{{template "footer".}}

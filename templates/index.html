@@ -1,0 +1,131 @@
+  <head>
+    <link rel="stylesheet" href="static/style.css">
+    <title>Heart Disease</title>
+  </head>
+<body>
+<center>
+<h1>Heart Disease Predictor v{{.Version}}</h1>
+<p>
+  Predict 10 year risk of coronary heart disease CHD
+</p>
+<form action="/submit">
+  <div>
+    <label class="title">Sex</label>
+    <input type="radio" id="male" name="sex" value="male" checked>
+    <label for="male">male</label>
+    <input type="radio" id="female" name="sex" value="female">
+    <label for="female">female</label>
+    <br>
+  </div>
+
+  <div>
+    <label for="age" class="title">Age</label><br>
+    <input type="number" id="age" name="age" value="18" min="1">
+  </div>
+
+  <div>
+    <label class="title">Education</label>
+    <br>
+    <input type="radio" id="e1" name="education" value="1" checked>
+    <label for="e1">1</label>
+    <br>
+    <input type="radio" id="e2" name="education" value="2">
+    <label for="e2">2</label>
+    <br>
+    <input type="radio" id="e3" name="education" value="3">
+    <label for="e3">3</label>
+    <br>
+    <input type="radio" id="e4" name="education" value="4">
+    <label for="e4">4</label>
+  </div>
+  
+  <div>
+    <label class="title">Current Smoker</label>
+    <input type="radio" id="syes" name="smoker" value="yes" onchange="showSmokeCount(this)">
+    <label for="syes">yes</label>
+    <input type="radio" id="sno" name="smoker" value="no" checked onchange="hideSmokeCount(this)">
+    <label for="sno">no</label>
+  </div>
+  
+  <div>
+    <label id="labelcpd" for="cpd" class="title" style="display:none;">Cigs per day</label>
+    <input type="number" id="cpd" name="cigsPerDay" value="0" min="0" style="display:none;">
+  </div>
+
+  <div>
+    <label class="title">Taking BP meds</label>
+    <input type="radio" id="bpyes" name="bpmed" value="yes">
+    <label for="bpyes">yes</label>
+    <input type="radio" id="bpno" name="bpmed" value="no" checked>
+    <label for="bpno">no</label>
+  </div>  
+
+  <div>
+    <label class="title">Prevalent Stroke</label>
+    <input type="radio" id="strokeyes" name="stroke" value="yes">
+    <label for="strokeyes">yes</label>
+    <input type="radio" id="strokeno" name="stroke" value="no" checked>
+    <label for="strokeno">no</label>
+  </div>
+
+  <div>
+    <label class="title">Prevalent Hypertension</label>
+    <input type="radio" id="hypyes" name="hyp" value="yes">
+    <label for="hypyes">yes</label>
+    <input type="radio" id="hypno" name="hyp" value="no" checked>
+    <label for="hypno">no</label>
+  </div>
+
+  <div>
+    <label class="title">Diabetes</label>
+    <input type="radio" id="dbyes" name="diabetes" value="yes">
+    <label for="dbyes">yes</label>
+    <input type="radio" id="dbno" name="diabetes" value="no" checked>
+    <label for="dbno">no</label>
+  </div>
+
+  <div>
+    <label for="chol" class="title">Total Cholestrol</label><br>
+    <input type="number" id="chol" name="chol" value="230" min="1">
+  </div>
+
+  <div>
+    <label for="sysBP" class="title">Systolic blood pressure</label><br>
+    <input type="number" step="any"  id="sysBP" name="sysBP" value="120" min="1">
+  </div>
+
+  <div>
+    <label for="diaBP" class="title">Diastolic blood pressure</label><br>
+    <input type="number" step="any" id="diaBP" name="diaBP" value="80" min="1">
+  </div>
+
+  <div>
+    <label for="height" class="title">Height(cm)</label><br>
+    <input type="number" step="any" onchange="calcBMI()" id="height" name="height" value="175" min="1">
+    <br>
+    <label for="weight" class="title">Weight(kg)</label><br>
+    <input type="number" step="any" id="weight" onchange="calcBMI()" name="weight" value="60" min="1">
+    <br>
+    <span id="bmi">BMI=</span>
+  </div>
+
+  <div>
+    <label for="hrate" class="title">Heart Rate</label><br>
+    <input type="number" id="hrate" name="hrate" value="75" min="1">
+  </div>
+
+  <div>
+    <label for="glucose" class="title">Glucose</label><br>
+    <input type="number" id="glucose" name="glucose" value="80" min="1">
+  </div>
+
+  <div id="submit">
+    <input type="submit" value="Submit">
+  </div>
+</form> 
+</center>
+</body>
+
+{{template "footer" .}}
+
+<script type="text/javascript" src="static/script.js"></script>
